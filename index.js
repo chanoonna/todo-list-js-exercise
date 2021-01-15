@@ -8,8 +8,8 @@ function newTask(title, description) {
     logState: function() {
       console.log(`${this.title} has${this.complete? " " : " not "}been completed`);
     },
-    set markComplete(val) {
-      this.complete = val;
+    markComplete: function() {
+      this.complete = true;
     }
   };
   return task;
@@ -21,5 +21,5 @@ const task2 = newTask("Do Laundry", "Make whiny face");                         
 const tasks = [task1, task2];
 
 task1.logState();
-task1.markComplete = true;
+task1.markComplete();
 task1.logState();
